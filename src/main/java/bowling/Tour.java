@@ -20,15 +20,15 @@ public class Tour {
         lancers.add(lancer);
 
         if (numeroTour < 10) {
-            // STRIKE
+            // STRIKE donc fin immédiate
             if (lancers.size() == 1 && lancer.getNombreDeQuillesAbattues() == 10) {
                 return false;
             }
-            // 2 lancers → tour fini
+            // fin du tour après 2 lancers
             if (lancers.size() == 2) {
                 return false;
             }
-            return true;
+            return true; // Le joueur peut rejouer
         }
 
         // ---------- 10e TOUR ----------
@@ -41,7 +41,7 @@ public class Tour {
             return total >= 10;
         }
 
-        // 3 lancers max
+        // 3 lancers au 10e tour → terminé
         return false;
     }
 

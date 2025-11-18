@@ -69,6 +69,7 @@ public class PartieMonoJoueur {
         int score = 0;
         int indexLancer = 0;
 
+		// On évalue 10 frames, pas plus
         for (int frame = 0; frame < 10 && indexLancer < lancers.size(); frame++) {
             int premier = lancers.get(indexLancer);
 
@@ -83,7 +84,7 @@ public class PartieMonoJoueur {
                 score += 10 + getLancerSuivant(lancers, indexLancer + 2);
                 indexLancer += 2;
             }
-            // CAS NORMAL
+            // deux lancers simples
             else {
                 score += premier + getLancerSuivant(lancers, indexLancer + 1);
                 indexLancer += 2;
